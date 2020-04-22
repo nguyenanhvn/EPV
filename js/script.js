@@ -1,11 +1,4 @@
 jQuery(document).ready(function() {
-	if(window.location.href.indexOf('/vi/')){
-		var showmore = '<a class="show-more hide-mobile">Hiển thị thêm <i class="fa fa-angle-down"></i></a><a class="show-more show-mobile">Hiển thị thêm <i class="fa fa-angle-down"></i></a>';
-		var showless = '<a class="show-less hide-mobile">Hiển thị ít đi <i class="fa fa-angle-up"></i></a><a class="show-less show-mobile">Hiển thị ít đi <i class="fa fa-angle-up"></i></a>';
-	} else {
-		var showmore = '<a class="show-more hide-mobile">Show More <i class="fa fa-angle-down"></i></a><a class="show-more show-mobile">Show More <i class="fa fa-angle-down"></i></a>';
-		var showless = '<a class="show-less hide-mobile">Show Less <i class="fa fa-angle-up"></i></a><a class="show-less show-mobile">Show Less <i class="fa fa-angle-up"></i></a>';
-	}
 	var width_device = jQuery(window).width();
 	jQuery('.dotdotdot').dotdotdot();
 	setTimeout(function(){
@@ -38,6 +31,21 @@ jQuery(document).ready(function() {
 		bottomSpacing: jQuery('#footer').height() + 60,
 		getWidthFrom: '50'
 	});
+
+	jQuery(window).resize(function(event) {
+		jQuery("#header").sticky('update');
+
+		if(jQuery(window).width() > 992){	
+			jQuery("#header").sticky({ 
+				topSpacing: 0,
+				bottomSpacing: jQuery('#footer').height() + 60,
+				getWidthFrom: '50'
+			});
+		} else {
+	    	jQuery("#header").unstick();
+		}
+	});	
+
 
 	jQuery(document).on('click', '.small-breadcrumbs .current-page', function(event) {
 		event.preventDefault();
@@ -145,6 +153,126 @@ jQuery(document).ready(function() {
 		    },
 		});
 	}
+
+    if(jQuery('.news__slider').length > 0){
+		jQuery('.news__slider').owlCarousel({
+		    loop:true,
+		    margin: 10,
+		    autoplayTimeout:5000,
+		    nav: true,
+		    autoplay: false,
+		    rewind: true,
+		    dots: true,
+	        lazyLoad:true,
+			autoplayHoverPause:true,
+		  	autoplaySpeed: 700,
+		  	navSpeed: 700,
+		  	dragEndSpeed: 700, 
+		  	navText: ['<div class="slider__prev"></div>','<div class="slider__next"></div>'],   
+			responsive:{
+				0:{
+				    items: 1,
+				},
+		        992:{
+		        	items: 2,
+		        },
+		        1200:{
+				    items: 3,
+		        },
+		    },
+		});
+	}
+
+    if(jQuery('.media__slider').length > 0){
+		jQuery('.media__slider').owlCarousel({
+		    loop:true,
+		    margin: 10,
+		    autoplayTimeout:5000,
+		    nav: true,
+		    autoplay: false,
+		    rewind: true,
+		    dots: true,
+	        lazyLoad:true,
+			autoplayHoverPause:true,
+		  	autoplaySpeed: 700,
+		  	navSpeed: 700,
+		  	dragEndSpeed: 700, 
+		  	navText: ['<div class="slider__prev"></div>','<div class="slider__next"></div>'],   
+			responsive:{
+				0:{
+				    items: 1,
+				},
+				450:{
+				    items: 3,
+				},
+				767:{
+				    items: 4,
+				},
+		        992:{
+		        	items: 5,
+		        },
+		        1200:{
+				    items: 6,
+		        },
+		    },
+		});
+	}
+
+	jQuery('.item__left').slick({
+	  	arrows: false,
+	  	asNavFor: '.item__right, .item__bottom',
+	    fade: true,
+		cssEase: 'linear',
+		swipe: false,
+		speed: 1000,
+	});
+	jQuery('.item__right').slick({
+	  	asNavFor: '.item__left, .item__bottom',
+	  	slidesToShow: 1,
+		slidesToScroll: 1,
+		prevArrow: '<div class="tw__prev"><span></span></div>',
+	    nextArrow: '<div class="tw__next"><span></span></div>',
+	    fade: true,
+		cssEase: 'linear',
+		customPaging: function(slider, i) { 
+	        return '<div class="tw__number">0</div><div class="tw__dot">0' + (i + 1) + '</div>';
+	    },
+	    swipe: false,
+	    autoplay: true,
+		autoplaySpeed: 5000,
+		speed: 1000,
+		responsive: [
+		    {
+		      breakpoint: 1920,
+		      settings: {
+		        slidesToShow: 1,
+		        slidesToScroll: 1,
+			  	arrows: true,
+		        dots: true,
+		      }
+		    },
+		    {
+		      breakpoint: 992,
+		      settings: {
+			  	arrows: false,
+		        dots: false,
+			    swipe: true,
+		      }
+		    }
+		]
+	});
+	jQuery('.item__bottom').slick({
+	 	arrows: false,
+	  	asNavFor: '.item__left, .item__right',
+	  	dots: false,
+	  	focusOnSelect: false,
+	  	slidesToShow: 1,
+	  	touchMove: false,
+	    fade: true,
+		cssEase: 'linear',
+		swipe: false,
+		speed: 1000,
+	});
 });
 
 function header(){

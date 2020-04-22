@@ -298,71 +298,152 @@
 
 	<!-- Content -->
 	<main id="content">
-		<!-- Content Book A Stand -->
-		<section class="content-book">
+		<!-- Content Application Form -->
+		<section class="content-application" style="background-image: url(images/bg-form.jpg);">
 			<div class="container">
-				<div class="content-book_box">
-					<h1 class="heading">Book <span>a Stand</span></h1>
+				<div class="content-application_box">
+					<h1 class="heading">Application <span>Form</span></h1>
 
-					<div class="items">
-						<div class="item">
-							<div class="item__img">
-								<img src="images/book-1.png" alt="">
-							</div>
-							<div class="item__caption">
-								<div class="item__name">Space Only</div>
-
-								<div class="item__info">
-									<div class="item__rate">
-										Full rate: <br />
-										SGD 535 per sqm
-									</div>
-									<a href="#" class="item__book">
-										+ Book now
-									</a>
-								</div>
-							</div>
+					<div class="box__blue">
+						<div class="text__blue">
+							Thank you for your interest in Electric & Power Vietnam 2020
 						</div>
-						<div class="item">
-							<div class="item__img">
-								<img src="images/book-2.jpg" alt="">
-							</div>
-							<div class="item__caption">
-								<div class="item__name">Standard Package</div>
 
-								<div class="item__info">
-									<div class="item__rate">
-										Full rate: <br />
-										SGD 535 per sqm
-									</div>
-									<a href="#" class="item__book">
-										+ Book now
-									</a>
-								</div>
-							</div>
+						<div class="text__white">
+							Please complete and submit the form below to download brochures for all information you will need to know about the exhibition.
 						</div>
-						<div class="item">
-							<div class="item__img">
-								<img src="images/book-3.jpg" alt="">
-							</div>
-							<div class="item__caption">
-								<div class="item__name">Premium Package</div>
 
-								<div class="item__info">
-									<div class="item__rate">
-										Full rate: <br />
-										SGD 535 per sqm
-									</div>
-									<a href="#" class="item__book">
-										+ Book now
-									</a>
+						<div class="form">
+							<form action="application-form_submit" method="get" accept-charset="utf-8">
+								<div class="form__blabel">
+									I am interested in:
 								</div>
-							</div>
+								<div class="selectbox__radio">
+									<div class="radio-box">
+										<input type="radio" id="radio-1" name="interest" value="CEO Talks - Morning Session" placeholder="" checked="">
+										<label for="radio-1">EPV2020 Sale Brochure</label>
+									</div>
+									<div class="radio-box">
+										<input type="radio" id="radio-2" name="interest" value="CEO Talks - Morning Session" placeholder="">
+										<label for="radio-2">EPV2020 Sale Brochure</label>
+									</div>
+									<div class="radio-box">
+										<input type="radio" id="radio-3" name="interest" value="CEO Talks - Morning Session" placeholder="">
+										<label for="radio-3">EPV2020 Post Show Report</label>
+									</div>
+									<div class="radio-box">
+										<input type="radio" id="radio-4" name="interest" value="CEO Talks - Morning Session" placeholder="">
+										<label for="radio-4">EPV2020 Buyer's Invitation</label>
+									</div>
+									<div class="radio-box">
+										<input type="radio" id="radio-5" name="interest" value="CEO Talks - Morning Session" placeholder="">
+										<label for="radio-5">Buyers' Guide</label>
+									</div>
+									<div class="radio-box">
+										<input type="radio" id="radio-6" name="interest" value="CEO Talks - Morning Session" placeholder="">
+										<label for="radio-6">EPV2020 E-ticket</label>
+									</div>
+									<div class="radio-box">
+										<input type="radio" id="radio-7" name="interest" value="CEO Talks - Morning Session" placeholder="">
+										<label for="radio-7">Customer Experience Management Report</label>
+									</div>
+									<div class="radio-box">
+										<input type="radio" id="radio-8" name="interest" value="CEO Talks - Morning Session" placeholder="">
+										<label for="radio-8">EPV2020 Post Show Report</label>
+									</div>
+								</div>
+
+								<div class="clearfix"></div>
+
+								<div class="form__blabel">
+									General information:
+
+									<span><small>*</small> REQUIRED FIELD</span>
+								</div>
+
+								<div class="group">
+									<div class="col-1">									
+										<label>Full Name <span>*</span></label>
+										<input type="text" name="" value="" placeholder="">
+									</div>
+								</div>
+								<div class="group">
+									<div class="col-2">										
+										<label>POSITION <span>*</span></label>
+										<input type="text" name="" value="" placeholder="">
+									</div>
+									<div class="col-2">
+										<label>DEPARTMENT / DIVISION <span>*</span></label>
+										<input type="text" name="" value="" placeholder="">
+									</div>
+								</div>
+								<div class="group">
+									<div class="col-1">
+										<label>Company <span>*</span></label>
+										<input type="text" name="" value="" placeholder="">
+									</div>
+								</div>
+								<div class="group">
+									<div class="col-2">
+										<label>BUSINESS NATURE <span>*</span></label>
+										<input type="text" name="" value="" placeholder="">
+									</div>
+									<div class="col-2">
+										<label>PRODUCT / SERVICES</label>
+										<input type="text" name="" value="" placeholder="">
+									</div>
+								</div>
+								<div class="group">
+									<div class="col-1">
+										<label>POSTAL ADDRESS <span>*</span></label>
+										<input type="text" name="" value="" placeholder="">
+										</div>
+									</div>
+								<div class="group">
+									<div class="col-2">
+										<label>COUNTRY <span>*</span></label>
+										<input type="text" name="" value="" placeholder="">
+									</div>
+									<div class="col-4">
+										<label>STATE/PROVINCE</label>
+										<input type="text" name="" value="" placeholder="">
+									</div>
+									<div class="col-4">
+										<label>POSTAL CODE</label>
+										<input type="text" name="" value="" placeholder="">
+									</div>
+								</div>								
+								<div class="group">
+									<div class="col-3">
+										<label>Email <span>*</span></label>
+										<input type="email" name="" value="" placeholder="">
+									</div>
+									<div class="col-3">
+										<label>phone number</label>
+										<input type="phone" name="" value="" placeholder="">
+									</div>
+									<div class="col-3">
+										<label>website</label>
+										<input type="text" name="" value="" placeholder="">
+									</div>
+								</div>
+
+								<div class="group">
+									<input type="submit" name="" value="Submit">
+
+									<div class="clearfix"></div>
+
+									<div class="noted">
+										By submitting this form, you agree to be added to our mailing list and be sent updates about the event. <br/>
+										Information provided will be kept strictly confidential.
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section> <!-- /Content Book A Stand -->
+		</section> <!-- /Content Application Form -->
 	</main>
 
 	<div class="clearfix"></div>
