@@ -1017,16 +1017,13 @@ section.content-book {
     section.content-book .content-book_box .heading span {
       color: #00aeef; }
   section.content-book .content-book_box .items {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px; }
+    /*@include flex;*/
+    /*margin: 0 -15px;*/ }
     section.content-book .content-book_box .items .item {
-      float: left;
-      width: calc((100% - 90px) / 3);
+      /*float: left;*/
+      /*width: calc((100% - 90px) / 3);*/
       padding: 0;
-      margin: 0 15px 30px;
+      /*margin: 0 15px 30px;*/
       position: relative;
       overflow: hidden;
       background: #00aeef; }
@@ -1081,6 +1078,36 @@ section.content-book {
             section.content-book .content-book_box .items .item .item__caption .item__info .item__book:hover {
               background: #fff;
               color: #00aeef; }
+  section.content-book .content-book_box .owl-dots {
+    text-align: center;
+    width: 100%;
+    margin-top: 30px; }
+    section.content-book .content-book_box .owl-dots .owl-dot {
+      display: inline-block;
+      border-radius: 50%;
+      background: transparent;
+      transition: all 0.2s ease-out 0s;
+      -webkit-transition: all 0.2s ease-out 0s;
+      position: relative;
+      width: 22px;
+      height: 22px;
+      margin: 0 5px; }
+      section.content-book .content-book_box .owl-dots .owl-dot.active {
+        background: rgba(0, 0, 0, 0.1); }
+        section.content-book .content-book_box .owl-dots .owl-dot.active:after {
+          background: #00aeef; }
+      section.content-book .content-book_box .owl-dots .owl-dot:after {
+        content: '';
+        width: 6px;
+        height: 6px;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 50%; }
 
 @media (max-width: 1200px) {
   section.content-book .content-book_box .items .item .item__caption {
@@ -1090,13 +1117,15 @@ section.content-book {
       font-size: 18px; }
     section.content-book .content-book_box .items .item .item__caption .item__info .item__rate {
       font-size: 14px; } }
-@media (max-width: 992px) {
-  section.content-book .content-book_box .items .item {
-    width: calc((100% - 45px) / 3);
-    margin: 0 7.5px 15px; } }
+/*@media (max-width: 992px){
+	section.content-book .content-book_box .items .item {
+		width: calc((100% - 45px) / 3);
+		margin: 0 7.5px 15px;
+	}
+}*/
 @media (max-width: 767px) {
   section.content-book .content-book_box .items .item {
-    width: calc((100% - 30px) / 2); }
+    /*width: calc((100% - 30px) / 2);*/ }
     section.content-book .content-book_box .items .item .item__caption .item__info .item__rate {
       width: 100%;
       margin-bottom: 15px; }
@@ -1149,11 +1178,20 @@ section.content-about {
         width: 100%;
         font-weight: 600;
         font-size: 20px;
-        color: #000;
+        color: #00aeef;
         padding: 24px 85px 23px 30px;
-        background: #fff;
+        background: no-repeat center /cover;
         position: relative;
-        cursor: pointer; }
+        cursor: pointer;
+        transition: all 0.2s ease-out 0s;
+        -webkit-transition: all 0.2s ease-out 0s; }
+        section.content-about .content-about_box .box__right .accordions .accordion .title__accordion:hover {
+          background: #fff !important; }
+          section.content-about .content-about_box .box__right .accordions .accordion .title__accordion:hover:before {
+            background: #fff; }
+          section.content-about .content-about_box .box__right .accordions .accordion .title__accordion:hover span:before,
+          section.content-about .content-about_box .box__right .accordions .accordion .title__accordion:hover span:after {
+            background: #00aeef; }
         section.content-about .content-about_box .box__right .accordions .accordion .title__accordion:not(.collapsed) span:after {
           opacity: 0; }
         section.content-about .content-about_box .box__right .accordions .accordion .title__accordion:not(.collapsed).has__bg:before {
@@ -1161,16 +1199,6 @@ section.content-about {
         section.content-about .content-about_box .box__right .accordions .accordion .title__accordion:not(.collapsed).has__bg span:before,
         section.content-about .content-about_box .box__right .accordions .accordion .title__accordion:not(.collapsed).has__bg span:after {
           background: #00aeef; }
-        section.content-about .content-about_box .box__right .accordions .accordion .title__accordion:not(.has__bg) {
-          border-bottom: 1px solid #ccc; }
-        section.content-about .content-about_box .box__right .accordions .accordion .title__accordion.has__bg {
-          background: no-repeat center /cover;
-          color: #00aeef; }
-          section.content-about .content-about_box .box__right .accordions .accordion .title__accordion.has__bg:before {
-            background: #00aeef; }
-          section.content-about .content-about_box .box__right .accordions .accordion .title__accordion.has__bg span:before,
-          section.content-about .content-about_box .box__right .accordions .accordion .title__accordion.has__bg span:after {
-            background: #fff; }
         section.content-about .content-about_box .box__right .accordions .accordion .title__accordion:before {
           content: '';
           display: block;
@@ -1182,6 +1210,7 @@ section.content-about {
           top: 0;
           bottom: 0;
           margin: auto;
+          background: #00aeef;
           transition: all 0.2s ease-out 0s;
           -webkit-transition: all 0.2s ease-out 0s; }
         section.content-about .content-about_box .box__right .accordions .accordion .title__accordion span {
@@ -1191,7 +1220,7 @@ section.content-about {
             display: block;
             width: 12px;
             height: 2px;
-            background: #00aeef;
+            background: #fff;
             position: absolute;
             right: 34px;
             top: 0;
@@ -1202,7 +1231,7 @@ section.content-about {
             display: block;
             width: 2px;
             height: 12px;
-            background: #00aeef;
+            background: #fff;
             position: absolute;
             right: 39px;
             top: 0;

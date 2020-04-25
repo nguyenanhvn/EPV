@@ -341,12 +341,47 @@ jQuery(document).ready(function() {
 			responsive:{
 				0:{
 				    items: 1,
+				    slideBy: 1,
 				},
 		        992:{
 		        	items: 2,
+				    slideBy: 2,
 		        },
 		        1200:{
 				    items: 3,
+				    slideBy: 3,
+		        },
+		    },
+		});
+	}
+
+    if(jQuery('.book__slider').length > 0){
+		jQuery('.book__slider').owlCarousel({
+		    loop:true,
+		    margin: 30,
+		    autoplayTimeout:5000,
+		    nav: true,
+		    autoplay: false,
+		    rewind: true,
+		    dots: true,
+	        lazyLoad:true,
+			autoplayHoverPause:true,
+		  	autoplaySpeed: 700,
+		  	navSpeed: 700,
+		  	dragEndSpeed: 700, 
+		  	navText: ['<div class="slider__prev"></div>','<div class="slider__next"></div>'],   
+			responsive:{
+				0:{
+				    items: 1,
+				    slideBy: 1,
+				},
+		        450:{
+		        	items: 2,
+				    slideBy: 2,
+		        },
+		        992:{
+				    items: 3,
+				    slideBy: 3,
 		        },
 		    },
 		});
@@ -370,18 +405,23 @@ jQuery(document).ready(function() {
 			responsive:{
 				0:{
 				    items: 1,
+				    slideBy: 1,
 				},
 				450:{
 				    items: 3,
+				    slideBy: 3,
 				},
 				767:{
 				    items: 4,
+				    slideBy: 4,
 				},
 		        992:{
 		        	items: 5,
+		        	slideBy: 5,
 		        },
 		        1200:{
 				    items: 6,
+				    slideBy: 6,
 		        },
 		    },
 		});
