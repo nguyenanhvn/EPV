@@ -21,10 +21,60 @@ jQuery(document).ready(function() {
 	);
 	wow.init();
 
-	// header();
-	// jQuery(window).scroll(function(){
-	// 	header();
-	// });
+	if(jQuery('.content-tabs_box').length > 0){
+		jQuery('.content-tabs_box').mCustomScrollbar({
+			axis: "x",
+			horizontalScroll: true,
+			advanced:{
+				autoExpandHorizontalScroll:true
+			}
+		});		
+	}
+
+	jQuery('.content-profile .items .item .item__box').height('auto');
+	jQuery('.content-profile .items .item .item__box .item__name').height('auto');
+
+	if(jQuery(window).width() > 992){
+		var height_items = 0;
+		var height_heading = 0;	
+
+		setTimeout(function(){
+			for (var i = 0; i < jQuery('.content-profile .items .item').length; i++) {
+				if (jQuery('.content-profile .items .item:eq('+ i +') .item__box').height() > height_items) {
+					height_items = jQuery('.content-profile .items .item:eq('+ i +') .item__box').height();
+				}
+				if (jQuery('.content-profile .items .item:eq('+ i +') .item__box .item__name').height() > height_heading) {
+					height_heading = jQuery('.content-profile .items .item:eq('+ i +') .item__box .item__name').height();
+				}
+			}
+			jQuery('.content-profile .items .item .item__box').height(height_items);
+			jQuery('.content-profile .items .item .item__box .item__name').height(height_heading);		
+		}, 100);
+	}
+
+    jQuery(window).resize(function(event) {
+		jQuery('.content-profile .items .item .item__box').height('auto');
+		jQuery('.content-profile .items .item .item__box .item__name').height('auto');
+
+		if(jQuery(window).width() > 992){
+			var height_items = 0;
+			var height_heading = 0;	
+
+			for (var i = 0; i < jQuery('.content-profile .items .item').length; i++) {
+				if (jQuery('.content-profile .items .item:eq('+ i +') .item__box').height() > height_items) {
+					height_items = jQuery('.content-profile .items .item:eq('+ i +') .item__box').height();
+				}
+				if (jQuery('.content-profile .items .item:eq('+ i +') .item__box .item__name').height() > height_heading) {
+					height_heading = jQuery('.content-profile .items .item:eq('+ i +') .item__box .item__name').height();
+				}
+			}
+			jQuery('.content-profile .items .item .item__box').height(height_items);
+			jQuery('.content-profile .items .item .item__box .item__name').height(height_heading);		
+		} else {
+			jQuery('.content-profile .items .item .item__box').height('auto');
+			jQuery('.content-profile .items .item .item__box .item__name').height('auto');
+		}
+	});
 
 	jQuery("#header").sticky({ 
 		topSpacing: 0,
@@ -46,6 +96,132 @@ jQuery(document).ready(function() {
 		}
 	});	
 
+	// Number animation
+    if(jQuery('.box__circle__number__animation').length > 0){
+	  	var a = 0;
+	  	var oTop = jQuery('.box__circle__number__animation').offset().top - window.innerHeight;
+
+	  	if (a == 0 && jQuery(window).scrollTop() > (oTop + 120)) {	  
+		  	jQuery({ countNum: jQuery('.box__circle__number__animation .items > li:eq(0) .number span').text()}).animate({
+		    	countNum: jQuery('.box__circle__number__animation .items > li:eq(0)').attr('data-count')
+		  	} , {
+			    duration: 4000,
+			    easing:'linear',
+			    step: function() {
+			      	jQuery('.box__circle__number__animation .items > li:eq(0) .number span').text(Math.floor(this.countNum));
+			    },
+			    complete: function() {
+			      	jQuery('.box__circle__number__animation .items > li:eq(0) .number span').text(this.countNum);
+			    }
+		  	});		 
+		  	jQuery({ countNum1: jQuery('.box__circle__number__animation .items > li:eq(1) .number span').text()}).animate({
+		    	countNum1: jQuery('.box__circle__number__animation .items > li:eq(1)').attr('data-count')
+		  	} , {
+			    duration: 4000,
+			    easing:'linear',
+			    step: function() {
+			      	jQuery('.box__circle__number__animation .items > li:eq(1) .number span').text(Math.floor(this.countNum1));
+			    },
+			    complete: function() {
+			      	jQuery('.box__circle__number__animation .items > li:eq(1) .number span').text(this.countNum1);
+			    }
+		  	});		 
+		  	jQuery({ countNum2: jQuery('.box__circle__number__animation .items > li:eq(2) .number span').text()}).animate({
+		    	countNum2: jQuery('.box__circle__number__animation .items > li:eq(2)').attr('data-count')
+		  	} , {
+			    duration: 4000,
+			    easing:'linear',
+			    step: function() {
+			      	jQuery('.box__circle__number__animation .items > li:eq(2) .number span').text(Math.floor(this.countNum2));
+			    },
+			    complete: function() {
+			      	jQuery('.box__circle__number__animation .items > li:eq(2) .number span').text(this.countNum2);
+			    }
+		  	});		 
+		  	jQuery({ countNum3: jQuery('.box__circle__number__animation .items > li:eq(3) .number span').text()}).animate({
+		    	countNum3: jQuery('.box__circle__number__animation .items > li:eq(3)').attr('data-count')
+		  	} , {
+			    duration: 4000,
+			    easing:'linear',
+			    step: function() {
+			      	jQuery('.box__circle__number__animation .items > li:eq(3) .number span').text(Math.floor(this.countNum3));
+			    },
+			    complete: function() {
+			      	jQuery('.box__circle__number__animation .items > li:eq(3) .number span').text(this.countNum3);
+			    }
+		  	});		 
+		  	jQuery({ countNum4: jQuery('.box__circle__number__animation .items > li:eq(4) .number span').text()}).animate({
+		    	countNum4: jQuery('.box__circle__number__animation .items > li:eq(4)').attr('data-count')
+		  	} , {
+			    duration: 4000,
+			    easing:'linear',
+			    step: function() {
+			      	jQuery('.box__circle__number__animation .items > li:eq(4) .number span').text(Math.floor(this.countNum4));
+			    },
+			    complete: function() {
+			      	jQuery('.box__circle__number__animation .items > li:eq(4) .number span').text(this.countNum4);
+			    }
+		  	});			  
+	    	a = 1;
+	  	}
+		jQuery(window).scroll(function() {
+		  	if (a == 0 && jQuery(window).scrollTop() > (oTop + 120)) {	  		
+		  
+		  	jQuery({ countNum: jQuery('.countnumber > li:eq(0) .circle span').text()}).animate({
+		    	countNum: jQuery('.countnumber > li:eq(0)').attr('data-count')
+		  	} , {
+			    duration: 4000,
+			    easing:'linear',
+			    step: function() {
+			      	jQuery('.countnumber > li:eq(0) .circle span').text(Math.floor(this.countNum));
+			    },
+			    complete: function() {
+			      	jQuery('.countnumber > li:eq(0) .circle span').text(this.countNum);
+			    }
+		  	});
+			  
+		  	jQuery({ countNum1: jQuery('.countnumber > li:eq(1) .circle span').text()}).animate({
+		    	countNum1: jQuery('.countnumber > li:eq(1)').attr('data-count')
+		  	} , {
+			    duration: 4000,
+			    easing:'linear',
+			    step: function() {
+			      	jQuery('.countnumber > li:eq(1) .circle span').text(Math.floor(this.countNum1));
+			    },
+			    complete: function() {
+			      	jQuery('.countnumber > li:eq(1) .circle span').text(this.countNum1);
+			    }
+		  	});
+			  
+		  	jQuery({ countNum2: jQuery('.countnumber > li:eq(2) .circle span').text()}).animate({
+		    	countNum2: jQuery('.countnumber > li:eq(2)').attr('data-count')
+		  	} , {
+			    duration: 4000,
+			    easing:'linear',
+			    step: function() {
+			      	jQuery('.countnumber > li:eq(2) .circle span').text(Math.floor(this.countNum2));
+			    },
+			    complete: function() {
+			      	jQuery('.countnumber > li:eq(2) .circle span').text(this.countNum2);
+			    }
+		  	});
+			  
+		  	jQuery({ countNum3: jQuery('.countnumber > li:eq(3) .circle span').text()}).animate({
+		    	countNum3: jQuery('.countnumber > li:eq(3)').attr('data-count')
+		  	} , {
+			    duration: 4000,
+			    easing:'linear',
+			    step: function() {
+			      	jQuery('.countnumber > li:eq(3) .circle span').text(Math.floor(this.countNum3));
+			    },
+			    complete: function() {
+			      	jQuery('.countnumber > li:eq(3) .circle span').text(this.countNum3);
+			    }
+		  	});
+		    	a = 1;
+		  	}
+		});
+	}
 
 	jQuery(document).on('click', '.small-breadcrumbs .current-page', function(event) {
 		event.preventDefault();
@@ -75,13 +251,6 @@ jQuery(document).ready(function() {
 			jQuery('section.small-breadcrumbs .box .show-mobile.current-page').parent().css("width", "calc(100% - " + wi +"px)");
 			jQuery('section.small-breadcrumbs .box .menu-breadcrumbs li').css("padding-left", wy +"px");
 		}
-	}
-
-	if(jQuery('.dropdown-pagenavi').length > 0){
-		jQuery('.dropdown-pagenavi').mCustomScrollbar();		
-	}
-	if(jQuery('.box-scroll-horizontal').length > 0){
-		jQuery('.box-scroll-horizontal').mCustomScrollbar({axis: "x"});		
 	}
 
     /*=================================================
@@ -218,16 +387,45 @@ jQuery(document).ready(function() {
 		});
 	}
 
-	jQuery('.item__left').slick({
+    if(jQuery('.box__circle__ipad .items').length > 0){
+		jQuery('.box__circle__ipad .items').owlCarousel({
+		    loop:false,
+		    margin: 0,
+		    autoplayTimeout:5000,
+		    nav: true,
+		    autoplay: false,
+		    rewind: true,
+		    dots: true,
+	        lazyLoad:true,
+			autoplayHoverPause:true,
+		  	autoplaySpeed: 700,
+		  	navSpeed: 700,
+		  	dragEndSpeed: 700, 
+		  	navText: ['<div class="slider__prev"></div>','<div class="slider__next"></div>'],   
+		    // autoWidth:true,
+		    center:true,
+			responsive:{
+				0:{
+				    items: 2,
+				},
+		        500:{
+		        	items: 3,
+		        }
+		    },
+		});
+	}
+
+	// News & Media
+	jQuery('.content-news-style2 .item__left').slick({
 	  	arrows: false,
-	  	asNavFor: '.item__right, .item__bottom',
+	  	asNavFor: '.content-news-style2 .item__right, .content-news-style2 .item__bottom',
 	    fade: true,
 		cssEase: 'linear',
 		swipe: false,
 		speed: 1000,
 	});
-	jQuery('.item__right').slick({
-	  	asNavFor: '.item__left, .item__bottom',
+	jQuery('.content-news-style2 .item__right').slick({
+	  	asNavFor: '.content-news-style2 .item__left, .content-news-style2 .item__bottom',
 	  	slidesToShow: 1,
 		slidesToScroll: 1,
 		prevArrow: '<div class="tw__prev"><span></span></div>',
@@ -261,14 +459,78 @@ jQuery(document).ready(function() {
 		    }
 		]
 	});
-	jQuery('.item__bottom').slick({
+	jQuery('.content-news-style2 .item__bottom').slick({
 	 	arrows: false,
-	  	asNavFor: '.item__left, .item__right',
+	  	asNavFor: '.content-news-style2 .item__left, .content-news-style2 .item__right',
+	  	focusOnSelect: false,
+	  	slidesToShow: 1,
+	  	touchMove: false,
+	    fade: true,
+		cssEase: 'linear',
+		swipe: false,
+		speed: 1000,
+	});
+
+	// Exhibiting
+	jQuery('.content-testimonials .item__avatar__main').slick({
+	  	arrows: false,
+	  	asNavFor: '.content-testimonials .item__reviews, .content-testimonials .item__avatar__child',
+	    fade: true,
+		cssEase: 'linear',
+		swipe: false,
+		speed: 1000,
+		responsive: [
+		    {
+		      breakpoint: 1920,
+		      settings: {
+			  	dots: false,
+				swipe: false,
+		      }
+		    },
+		    {
+		      breakpoint: 992,
+		      settings: {
+			  	dots: true,
+				swipe: true,
+		      }
+		    }
+		]
+	});
+	jQuery('.content-testimonials .item__avatar__child').slick({
+	 	arrows: true,
+	  	asNavFor: '.content-testimonials .item__avatar__main, .content-testimonials .item__reviews',
+		prevArrow: '<div class="tw__prev"><span></span></div>',
+	    nextArrow: '<div class="tw__next"><span></span></div>',
+		cssEase: 'linear',
+	    swipe: false,
+		speed: 1000,
+        dots: false,
+		responsive: [
+		    {
+		      breakpoint: 1920,
+		      settings: {
+		        slidesToShow: 3,
+		        slidesToScroll: 1,
+			  	arrows: true,
+		      }
+		    },
+		    {
+		      breakpoint: 992,
+		      settings: {
+		        slidesToShow: 2,
+			    swipe: true,
+		      }
+		    }
+		]
+	});
+	jQuery('.content-testimonials .item__reviews').slick({
+	  	asNavFor: '.content-testimonials .item__avatar__main, .content-testimonials .item__avatar__child',
 	  	dots: false,
 	  	focusOnSelect: false,
 	  	slidesToShow: 1,
 	  	touchMove: false,
 	    fade: true,
+	    arrows: false,
 		cssEase: 'linear',
 		swipe: false,
 		speed: 1000,

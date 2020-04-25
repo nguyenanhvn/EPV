@@ -145,122 +145,22 @@
 		max-width: 100%;
 	}
 
-	.animated  {
-	  -webkit-animation-duration: 3s;
-	  animation-duration: 3s;
-
-	  -webkit-animation-delay: 600ms;
-	  animation-delay: 600ms;
-	}
-
-	.animate-delay-1000ms {
-	  -webkit-animation-delay: 1s;
-	  animation-delay: 1s;
-	}
-
-	.animate-delay-800ms {
-	  -webkit-animation-delay: 800ms;
-	  animation-delay: 800ms;
-	}
-
-	.fr-next, .fr-prev{
-		width: 30px;
-		height: 30px;
-		line-height: 30px;
-		text-align: center;
-		@include transition;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		margin: auto;
-		border-radius: 3px;
-		&:hover{
-			background: rgba($color-hover, 0.3);
-		}
-	}
-	.fr-next{
-		right: -50px;
-	}
-	.fr-prev{
-		left: -50px;
-	}
-	.fr-next:before{
-		background: url(../images/arrow-next.png) no-repeat center /cover;				
-	}
-	.fr-prev:before{
-		background: url(../images/arrow-prev.png) no-repeat center /cover;				
-	}
-
-	.owl-prev, .owl-next{
-		display: inline-block !important;
-	}
-	.show-more, .show-less{
-		float: right;
-		color: #fff;
-		font-size: 12px;
-		text-transform: uppercase;
-		margin-top: 15px;
-		position: relative;
-		font-weight: normal;
-		@include transition;
-		&:before{
-			content: '';
-			display: block;
-			width: 110px;
-			height: 1px;
-			background: #fff;
-			position: absolute;
-			left: -118px;
-		    top: 8px;
-		}
-		&:hover{
-			color: $color;
-			i{
-				color: $color;
-			}
-		}
-		i{
-		    margin-left: 5px;
-		    font-size: 9px;
-		    position: relative;
-		    top: -1px;
-		}
-	}
-	.popup{
-		position: fixed;
+	.box__ads{
+		float: left;
 		width: 100%;
-		max-width: 600px;
-		height: 200px;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		margin: auto;
-		border: 1px solid #9b874d;
-		border-radius: 5px;
-		@include flex-center;
-		z-index: 99;
-		.close-popup{
-			position: absolute;
-			right: 15px;
-			top: 15px;
-			img{
-				width: 21px;
-			}
+		margin: 40px 0;
+		text-align: center;
+		span{
+			font-size: 10px;
+		    text-align: center;
+		    padding: 7px 0;
+		    color: rgba(#000000, 0.5);
+		    pointer-events: none;
+		    width: 100%;
+		    float: left;
+		    text-align: center;
+		    font-weight: normal;
 		}
-		.text{
-			padding: 0 100px;
-			color: #fff;
-			text-align: center;
-		}
-	}
-	.darknight{
-		background: rgba(#232b2a, 0.9);
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
 	}
 
 @media (min-width: 1200px){
