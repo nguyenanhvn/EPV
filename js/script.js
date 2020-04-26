@@ -21,6 +21,27 @@ jQuery(document).ready(function() {
 	);
 	wow.init();
 
+//SHOW AND HIDE LIGHBOX
+	jQuery(document).on('click','.md-trigger',function(event){    	
+    	var value = jQuery(this).attr('data-modal');
+    	event.preventDefault();
+    	jQuery('#md-forgot form, #md-login form').trigger("reset");
+    	jQuery('#md-forgot form .text-warning, #md-login form .text-warning').text("");
+    	jQuery('#md-forgot form .input-control, #md-login form .input-control').removeClass("error").removeClass("success-value");
+    	jQuery('.md-modal').removeClass('md-show');
+        jQuery(value).addClass('md-show');
+        // jQuery('body').addClass('none-scroll');
+    });
+
+    jQuery(document).on('click','.md-close, .md-overlay, .md-cancel',function(){
+        jQuery('.md-modal').removeClass('md-show');
+        jQuery('body').removeClass('none-scroll');
+        var src = jQuery(this).parent().find('iframe').attr('src');		
+		jQuery(this).parent().find('iframe').attr('src', '');
+		jQuery(this).parent().find('iframe').attr('src', src);
+    }); 
+
+// Scrollbar
 	if(jQuery('.content-tabs_box').length > 0){
 		jQuery('.content-tabs_box').mCustomScrollbar({
 			axis: "x",
@@ -166,59 +187,68 @@ jQuery(document).ready(function() {
 	  	}
 		jQuery(window).scroll(function() {
 		  	if (a == 0 && jQuery(window).scrollTop() > (oTop + 120)) {	  		
-		  
-		  	jQuery({ countNum: jQuery('.countnumber > li:eq(0) .circle span').text()}).animate({
-		    	countNum: jQuery('.countnumber > li:eq(0)').attr('data-count')
+		  		
+		  	jQuery({ countNum: jQuery('.box__circle__number__animation .items > li:eq(0) .number span').text()}).animate({
+		    	countNum: jQuery('.box__circle__number__animation .items > li:eq(0)').attr('data-count')
 		  	} , {
 			    duration: 4000,
 			    easing:'linear',
 			    step: function() {
-			      	jQuery('.countnumber > li:eq(0) .circle span').text(Math.floor(this.countNum));
+			      	jQuery('.box__circle__number__animation .items > li:eq(0) .number span').text(Math.floor(this.countNum));
 			    },
 			    complete: function() {
-			      	jQuery('.countnumber > li:eq(0) .circle span').text(this.countNum);
+			      	jQuery('.box__circle__number__animation .items > li:eq(0) .number span').text(this.countNum);
 			    }
-		  	});
-			  
-		  	jQuery({ countNum1: jQuery('.countnumber > li:eq(1) .circle span').text()}).animate({
-		    	countNum1: jQuery('.countnumber > li:eq(1)').attr('data-count')
+		  	});		 
+		  	jQuery({ countNum1: jQuery('.box__circle__number__animation .items > li:eq(1) .number span').text()}).animate({
+		    	countNum1: jQuery('.box__circle__number__animation .items > li:eq(1)').attr('data-count')
 		  	} , {
 			    duration: 4000,
 			    easing:'linear',
 			    step: function() {
-			      	jQuery('.countnumber > li:eq(1) .circle span').text(Math.floor(this.countNum1));
+			      	jQuery('.box__circle__number__animation .items > li:eq(1) .number span').text(Math.floor(this.countNum1));
 			    },
 			    complete: function() {
-			      	jQuery('.countnumber > li:eq(1) .circle span').text(this.countNum1);
+			      	jQuery('.box__circle__number__animation .items > li:eq(1) .number span').text(this.countNum1);
 			    }
-		  	});
-			  
-		  	jQuery({ countNum2: jQuery('.countnumber > li:eq(2) .circle span').text()}).animate({
-		    	countNum2: jQuery('.countnumber > li:eq(2)').attr('data-count')
+		  	});		 
+		  	jQuery({ countNum2: jQuery('.box__circle__number__animation .items > li:eq(2) .number span').text()}).animate({
+		    	countNum2: jQuery('.box__circle__number__animation .items > li:eq(2)').attr('data-count')
 		  	} , {
 			    duration: 4000,
 			    easing:'linear',
 			    step: function() {
-			      	jQuery('.countnumber > li:eq(2) .circle span').text(Math.floor(this.countNum2));
+			      	jQuery('.box__circle__number__animation .items > li:eq(2) .number span').text(Math.floor(this.countNum2));
 			    },
 			    complete: function() {
-			      	jQuery('.countnumber > li:eq(2) .circle span').text(this.countNum2);
+			      	jQuery('.box__circle__number__animation .items > li:eq(2) .number span').text(this.countNum2);
 			    }
-		  	});
-			  
-		  	jQuery({ countNum3: jQuery('.countnumber > li:eq(3) .circle span').text()}).animate({
-		    	countNum3: jQuery('.countnumber > li:eq(3)').attr('data-count')
+		  	});		 
+		  	jQuery({ countNum3: jQuery('.box__circle__number__animation .items > li:eq(3) .number span').text()}).animate({
+		    	countNum3: jQuery('.box__circle__number__animation .items > li:eq(3)').attr('data-count')
 		  	} , {
 			    duration: 4000,
 			    easing:'linear',
 			    step: function() {
-			      	jQuery('.countnumber > li:eq(3) .circle span').text(Math.floor(this.countNum3));
+			      	jQuery('.box__circle__number__animation .items > li:eq(3) .number span').text(Math.floor(this.countNum3));
 			    },
 			    complete: function() {
-			      	jQuery('.countnumber > li:eq(3) .circle span').text(this.countNum3);
+			      	jQuery('.box__circle__number__animation .items > li:eq(3) .number span').text(this.countNum3);
 			    }
-		  	});
-		    	a = 1;
+		  	});		 
+		  	jQuery({ countNum4: jQuery('.box__circle__number__animation .items > li:eq(4) .number span').text()}).animate({
+		    	countNum4: jQuery('.box__circle__number__animation .items > li:eq(4)').attr('data-count')
+		  	} , {
+			    duration: 4000,
+			    easing:'linear',
+			    step: function() {
+			      	jQuery('.box__circle__number__animation .items > li:eq(4) .number span').text(Math.floor(this.countNum4));
+			    },
+			    complete: function() {
+			      	jQuery('.box__circle__number__animation .items > li:eq(4) .number span').text(this.countNum4);
+			    }
+		  	});			  
+	    	a = 1;
 		  	}
 		});
 	}
@@ -292,6 +322,23 @@ jQuery(document).ready(function() {
     	event.stopPropagation();
     });
 
+    if(jQuery('.ads__slider').length > 0){
+		jQuery('.ads__slider').owlCarousel({
+		    loop:true,
+		    margin: 10,
+		    autoplayTimeout:7000,
+		    nav: false,
+		    autoplay: true,
+		    rewind: true,
+		    dots: false,
+	        lazyLoad:true,
+			autoplayHoverPause:true,
+		  	autoplaySpeed: 700,
+		  	navSpeed: 700,
+		  	dragEndSpeed: 700,
+		  	items: 1,
+		});
+	}
     if(jQuery('.box__items__slider').length > 0){
 		jQuery('.box__items__slider').owlCarousel({
 		    loop:true,
@@ -320,6 +367,25 @@ jQuery(document).ready(function() {
 				    items: 7,
 		        }
 		    },
+		});
+	}
+
+    if(jQuery('.notify__slider').length > 0){
+		jQuery('.notify__slider').owlCarousel({
+		    loop:true,
+		    margin: 10,
+		    autoplayTimeout:5000,
+		    nav: true,
+		    autoplay: false,
+		    rewind: true,
+		    dots: false,
+	        lazyLoad:true,
+			autoplayHoverPause:true,
+		  	autoplaySpeed: 700,
+		  	navSpeed: 700,
+		  	dragEndSpeed: 700, 
+		  	items: 1,
+		  	navText: ['<div class="slider__prev"></div>','<div class="slider__next"></div>'],
 		});
 	}
 
@@ -369,19 +435,16 @@ jQuery(document).ready(function() {
 		  	autoplaySpeed: 700,
 		  	navSpeed: 700,
 		  	dragEndSpeed: 700, 
-		  	navText: ['<div class="slider__prev"></div>','<div class="slider__next"></div>'],   
+		  	navText: ['<div class="slider__prev"></div>','<div class="slider__next"></div>'],
 			responsive:{
 				0:{
 				    items: 1,
-				    slideBy: 1,
 				},
 		        450:{
 		        	items: 2,
-				    slideBy: 2,
 		        },
 		        992:{
 				    items: 3,
-				    slideBy: 3,
 		        },
 		    },
 		});
@@ -448,7 +511,10 @@ jQuery(document).ready(function() {
 				0:{
 				    items: 2,
 				},
-		        500:{
+				450:{
+				    items: 2,
+				},
+		        767:{
 		        	items: 3,
 		        }
 		    },
